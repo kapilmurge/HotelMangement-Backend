@@ -18,16 +18,18 @@ public class HotelController {
     public HotelController(HotelService hotelService){
         this.hotelService=hotelService;
     }
+
+
     @PostMapping("/create")
     public ResponseEntity<String> create(@RequestBody HotelDetailsDTO hotelDetailsDTO ){
         String response = hotelService.create(hotelDetailsDTO) ;
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/get")
-    public ResponseEntity<List<HotelDetailsDTO>> get(){
-        return new ResponseEntity<>(hotelService.getHotels(), HttpStatus.OK);
-    }
+//    @GetMapping("/get")
+//    public ResponseEntity<List<HotelDetailsDTO>> get(){
+//        return new ResponseEntity<>(hotelService.getHotels(), HttpStatus.OK);
+//    }
 
 
 

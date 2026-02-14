@@ -3,6 +3,9 @@ package com.mini.hotel.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @Entity
 @Table(name="hotel")
@@ -22,4 +25,8 @@ public class Hotel {
 
     @Column(name = "rating")
     private Integer rating;
+
+
+    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL, orphanRemoval = true) // here orphanRemoval = true is used to remove the branches when we delete the hotel
+    private List<HotelBranch> hotelBranches = new ArrayList<>();                                      // here cascade = CascadeType.ALL is used to save the branches when we save the hotel and also to delete the branches when we delete the hotel
 }

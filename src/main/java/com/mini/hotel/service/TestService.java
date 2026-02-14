@@ -1,6 +1,7 @@
 package com.mini.hotel.service;
 
 import com.mini.hotel.model.HotelDetailsDTO;
+import lombok.Value;
 import org.springframework.stereotype.Service;
 
 
@@ -18,6 +19,8 @@ public class TestService {
 
     public String create(HotelDetailsDTO hotelDetails){
         System.out.println(dummyService.print());
+
+
         return " Hotel created successfully with name " + hotelDetails.getName() ; // this functions ouput is passed to testcontroller response entity
     }
 
