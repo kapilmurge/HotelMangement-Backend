@@ -26,10 +26,10 @@ public class HotelController {
         return ResponseEntity.ok(response);
     }
 
-//    @GetMapping("/get")
-//    public ResponseEntity<List<HotelDetailsDTO>> get(){
-//        return new ResponseEntity<>(hotelService.getHotels(), HttpStatus.OK);
-//    }
+    @GetMapping("/get")
+    public ResponseEntity<List<HotelDetailsDTO>> get(){
+        return new ResponseEntity<>(hotelService.getHotels(), HttpStatus.OK);
+    }
 
 
 
